@@ -32,6 +32,36 @@ public static class Seed
                     UserName = "tom",
                     Email = "tom@test.com"
                 },
+                new User
+                {
+                    DisplayName = "Tom1",
+                    UserName = "tom1",
+                    Email = "tom1@test.com"
+                },
+                new User
+                {
+                    DisplayName = "Tom2",
+                    UserName = "tom2",
+                    Email = "tom2@test.com"
+                },
+                new User
+                {
+                    DisplayName = "Tom3",
+                    UserName = "tom3",
+                    Email = "tom3@test.com"
+                },
+                new User
+                {
+                    DisplayName = "Tom4",
+                    UserName = "tom4",
+                    Email = "tom4@test.com"
+                },
+                new User
+                {
+                    DisplayName = "Tom5",
+                    UserName = "tom5",
+                    Email = "tom5@test.com"
+                },
             };
 
             foreach (var user in users)
@@ -100,6 +130,31 @@ public static class Seed
                             User = users[1],
                             IsHost = false
                         },
+                        new ActivityAttendee
+                        {
+                            User = users[3],
+                            IsHost = false
+                        },
+                        new ActivityAttendee
+                        {
+                            User = users[4],
+                            IsHost = false
+                        },
+                        new ActivityAttendee
+                        {
+                            User = users[5],
+                            IsHost = false
+                        },
+                        new ActivityAttendee
+                        {
+                            User = users[6],
+                            IsHost = false
+                        },
+                        new ActivityAttendee
+                        {
+                            User = users[7],
+                            IsHost = false
+                        },
                     }
                 },
                 new Activity
@@ -110,19 +165,7 @@ public static class Seed
                     Category = "food",
                     Location = "London",
                     Venue = "Jamies Italian",
-                    Attendees = new List<ActivityAttendee>
-                    {
-                        new ActivityAttendee
-                        {
-                            User = users[0],
-                            IsHost = true
-                        },
-                        new ActivityAttendee
-                        {
-                            User = users[2],
-                            IsHost = false
-                        },
-                    }
+                    Attendees = new List<ActivityAttendee>()
                 },
                 new Activity
                 {
