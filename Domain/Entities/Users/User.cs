@@ -19,4 +19,6 @@ public class User : IdentityUser
     public List<UserFollowing> Followings { get; set; } = new();
     
     public List<UserFollowing> Followers { get; set; } = new();
+
+    public bool IsAdmin { get; set; } = false;
 }

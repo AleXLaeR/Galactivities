@@ -102,6 +102,7 @@ public class AccountController : BaseApiController
             ImageUri = user.Images.FirstOrDefault(i => i.IsMain)?.Uri,
             Token = _tokenService.GetJwtToken(user),
             Username = user.UserName,
+            IsAdmin = user.IsAdmin,
         };
     }
 }

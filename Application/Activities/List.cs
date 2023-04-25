@@ -60,6 +60,8 @@ public class List
                 activities = activities.Where(a => a.HostUsername == _userAccessor.GetUsername());
             }
 
+            activities = activities.Where(a => a.ModerationStatus == @params.Status);
+
             return activities;
         }
 
