@@ -29,6 +29,7 @@ namespace Persistence.Migrations
                     Location = table.Column<string>(type: "text", nullable: false),
                     Venue = table.Column<string>(type: "text", nullable: false),
                     IsCancelled = table.Column<bool>(type: "boolean", nullable: false)
+                    
                 },
                 constraints: table =>
                 {

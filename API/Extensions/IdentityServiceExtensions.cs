@@ -59,9 +59,13 @@ public static class IdentityServiceExtensions
         {
             options.AddPolicy("IsActivityHost", policy =>
                 policy.Requirements.Add(new IsHostRequirement()));
+            
+            options.AddPolicy("IsAdmin", policy => 
+                policy.Requirements.Add(new IsAdminRequirement()));
         });
 
         services.AddTransient<IAuthorizationHandler, IsHostRequirementHandler>();
+        services.AddTransient<IAuthorizationHandler, IsAdminRequirementHandler>();
         services.AddScoped<ITokenService, TokenService>();
 
         return services;

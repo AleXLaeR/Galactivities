@@ -13,4 +13,6 @@ public class UserDto
     public string Username { get; set; }
     
     public string? ImageUri { get; set; }
+    
+    public bool IsAdmin { get; set; }
 }
