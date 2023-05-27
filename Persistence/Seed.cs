@@ -2,6 +2,7 @@
 using Domain.Entities.Activities;
 using Domain.Entities.Junctions;
 using Domain.Entities.Users;
+using Domain.Enums;
 using Microsoft.AspNetCore.Identity;
 
 namespace Persistence;
@@ -19,6 +20,13 @@ public static class Seed
                     DisplayName = "Bob",
                     UserName = "bob",
                     Email = "bob@test.com"
+                },
+                new User
+                {
+                    DisplayName = "Admin@1",
+                    UserName = "Admin",
+                    Email = "admin@test.com",
+                    IsAdmin = true
                 },
                 new User
                 {
@@ -86,7 +94,8 @@ public static class Seed
                             User = users[0],
                             IsHost = true
                         }
-                    }
+                    },
+                    ModerationStatus = ModerationStatus.Resolved
                 },
                 new Activity
                 {
@@ -108,7 +117,8 @@ public static class Seed
                             User = users[1],
                             IsHost = false
                         },
-                    }
+                    },
+                    ModerationStatus = ModerationStatus.Resolved
                 },
                 new Activity
                 {
@@ -155,7 +165,8 @@ public static class Seed
                             User = users[7],
                             IsHost = false
                         },
-                    }
+                    },
+                    ModerationStatus = ModerationStatus.Resolved
                 },
                 new Activity
                 {
@@ -165,7 +176,8 @@ public static class Seed
                     Category = "food",
                     Location = "London",
                     Venue = "Jamies Italian",
-                    Attendees = new List<ActivityAttendee>()
+                    Attendees = new List<ActivityAttendee>(),
+                    ModerationStatus = ModerationStatus.Resolved
                 },
                 new Activity
                 {
@@ -187,7 +199,8 @@ public static class Seed
                             User = users[0],
                             IsHost = false                            
                         },
-                    }
+                    },
+                    ModerationStatus = ModerationStatus.Resolved
                 },
                 new Activity
                 {
@@ -204,7 +217,8 @@ public static class Seed
                             User = users[1],
                             IsHost = true                            
                         }
-                    }
+                    },
+                    ModerationStatus = ModerationStatus.Resolved
                 },
                 new Activity
                 {
@@ -226,7 +240,8 @@ public static class Seed
                             User = users[1],
                             IsHost = false                            
                         },
-                    }
+                    },
+                    ModerationStatus = ModerationStatus.Resolved
                 },
                 new Activity
                 {
@@ -248,7 +263,8 @@ public static class Seed
                             User = users[1],
                             IsHost = false                            
                         },
-                    }
+                    },
+                    ModerationStatus = ModerationStatus.Resolved
                 },
                 new Activity
                 {
@@ -270,7 +286,8 @@ public static class Seed
                             User = users[2],
                             IsHost = false                            
                         },
-                    }
+                    },
+                    ModerationStatus = ModerationStatus.Resolved
                 },
                 new Activity
                 {
@@ -292,7 +309,8 @@ public static class Seed
                             User = users[1],
                             IsHost = false                            
                         },
-                    }
+                    },
+                    ModerationStatus = ModerationStatus.Resolved
                 }
             };
 
