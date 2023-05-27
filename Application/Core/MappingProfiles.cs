@@ -88,6 +88,10 @@ public class MappingProfiles : Profile
                 o => o.MapFrom(s =>
                     s.Activity.Category)
             )
+            .ForMember(d => d.ModerationStatus,
+                o => o.MapFrom( s => 
+                    s.Activity.ModerationStatus)
+            )
             .ForMember(d => d.HostUsername, 
                 o => o.MapFrom(s =>
                     s.Activity.Attendees.FirstOrDefault(aa => aa.IsHost)!.User.UserName)

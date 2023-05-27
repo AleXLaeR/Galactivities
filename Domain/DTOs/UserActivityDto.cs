@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
+using Domain.Enums;
 
 namespace Domain.DTOs;
 
@@ -15,6 +16,9 @@ public class UserActivityDto
     
     [Required]
     public DateTime Date { get; set; }
+    
+    [Required]
+    public ModerationStatus ModerationStatus { get; set; }
 
     [JsonIgnore]
     public string HostUsername { get; set; }
