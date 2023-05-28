@@ -1,0 +1,29 @@
+version: "3.9"
+services:
+  back-end:
+    stdin_open: true
+    tty: true
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    volumes:
+      - type: bind
+        source: backend-mount
+        target: /app
+    ports:
+      - "5000:5000"
+  front-end:
+    build:
+      context: ./client-app/Galactivities_KNU_FRONT
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - type: bind
+        source: backend-mount
+        target: /app
+    depends_on:
+      back-end:
+        condition: service_started
+    restart: on-failure
