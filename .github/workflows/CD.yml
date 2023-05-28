@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 env:
   FRONT_FOLDER: ./client-app
-  DOCKERFILE_PATH: Dockerfile
+  DOCKERFILE_PATH: Dockerfile.prod
   
   PROD_BUILD_ART: dist-prod
   PROD_BUILD_FOLDER: API/wwwroot
