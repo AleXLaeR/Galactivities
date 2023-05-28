@@ -2,6 +2,7 @@
 using System.ComponentModel.DataAnnotations.Schema;
 using Domain.Entities.Comments;
 using Domain.Entities.Junctions;
+using Domain.Enums;
 
 namespace Domain.Entities.Activities;
 
@@ -30,6 +31,8 @@ public class Activity
     public string Venue { get; set; }
     
     public bool IsCancelled { get; set; }
+
+    public ModerationStatus ModerationStatus { get; set; } = ModerationStatus.Pending;
 
     public List<ActivityAttendee> Attendees { get; set; } = new();
 

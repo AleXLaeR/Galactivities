@@ -1,0 +1,31 @@
+﻿name: Get & Cache Dependencies
+description: Get the dependencies (via npm) and cache them
+inputs:
+  caching:
+    description: Whether to cache dependencies or not (defaults to true)
+    required: false
+    default: 'true'
+  install-path:
+    description: Where to install dependencies
+    required: false
+    default: './'
+runs:
+  using: composite
+  steps:
+    - name: Cache dependencies
+      id: cache
+      if: inputs.caching == 'true'
+      uses: actions/cache@v3
+      with:
+        path: |
+          ~/.yarn
+          ${{ inputs.install-path }}/node_modules
+        key: ${{ runner.os }}-node-deps-${{ hashFiles('**/yarn.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-node-deps-
+          ${{ runner.os }}-
+    - name: Install dependencies
+      if: steps.cache.outputs.cache-hit != 'true' || inputs.caching != 'true'
+      working-directory: ${{ inputs.install-path }}
+      shell: bash
+      run: yarn install --frozen-lockfile

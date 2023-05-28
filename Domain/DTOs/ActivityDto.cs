@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Domain.Enums;
 
 namespace Domain.DTOs;
 
@@ -31,4 +32,6 @@ public class ActivityDto
     public bool IsCancelled { get; set; }
 
     public List<AttendeeDto> Attendees { get; set; }
+    
+    public ModerationStatus ModerationStatus { get; set; }
 }

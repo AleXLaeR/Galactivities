@@ -1,10 +1,12 @@
-import { useEffect } from "react";
-import { useMobXStore } from "app/stores/root.store";
+import { useEffect } from 'react';
+import { useMobXStore } from '@store/index';
 
-export default function useFetchActivities() {
-    const { activityStore: { fetchActivities } } = useMobXStore();
+export default function useFetchActivities(status: 0 | 1 | 2 = 1) {
+  const {
+    activityStore: { fetchActivities },
+  } = useMobXStore();
 
-    useEffect(() => {
-        fetchActivities().then();
-    }, [fetchActivities]);
+  useEffect(() => {
+    fetchActivities(true, status).then();
+  }, [fetchActivities, status]);
 }

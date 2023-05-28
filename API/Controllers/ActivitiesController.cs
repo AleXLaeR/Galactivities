@@ -2,6 +2,7 @@
 using Application.Attendance;
 using Domain.Entities;
 using Domain.Entities.Activities;
+using Domain.Enums;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -39,6 +40,7 @@ public class ActivitiesController : BaseApiController
     }
     
     [Authorize(Policy = "IsActivityHost")]
+    //[Authorize(Policy = "IsAdmin")]
     [HttpDelete("{id:guid}")]
     public async Task<IActionResult> DeleteActivity([FromRoute] Guid id)
     {
@@ -50,4 +52,19 @@ public class ActivitiesController : BaseApiController
     {
         return HandleResult(await Mediator.Send(new UpdateAttendance.Command { Id = id }));
     }
+    
+    [Authorize(Policy = "IsAdmin")]
+    [HttpPut("{id:guid}/approve")]
+    public async Task<IActionResult> ApproveActivity([FromRoute] Guid id)
+    {
+        return HandleResult(await Mediator.Send(new ChangeStatus.Command { Id = id, Status = ModerationStatus.Resolved }));
+    }
+    
+    [Authorize(Policy = "IsAdmin")]
+    [HttpPut("{id:guid}/reject")]
+    public async Task<IActionResult> RejectActivity([FromRoute] Guid id)
+    {
+        return HandleResult(await Mediator.Send(new ChangeStatus.Command { Id = id, Status = ModerationStatus.Rejected }));
+    }
+    
 }
