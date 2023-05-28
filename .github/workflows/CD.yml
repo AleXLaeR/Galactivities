@@ -1,6 +1,7 @@
 ﻿name: Docker-based app CI / CD pipeline
 on:
-  push: [master]
+  push:
+    branches: [master]
   pull_request:
     types: [closed]
   workflow_dispatch:
