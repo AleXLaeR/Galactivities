@@ -14,7 +14,7 @@ RUN --mount=type=cache,target=/root/.yarn \
 
 COPY ./ ./
 
-RUN npm run build
+RUN npm run build:dev
 
 FROM nginxinc/nginx-unprivileged:1.23-alpine-perl as serve
 ARG OUTPUT_FOLDER=/usr/src/app/dist

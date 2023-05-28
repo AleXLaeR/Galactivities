@@ -28,4 +28,21 @@
       <ProjectReference Include="..\Persistence\Persistence.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="wwwroot\assets\index-4e24e809.css" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\index-e92eb707.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\categoryImages\culture.jpg" />
+      <_ContentIncludedByDefault Remove="wwwroot\categoryImages\default.jpg" />
+      <_ContentIncludedByDefault Remove="wwwroot\categoryImages\drinks.jpg" />
+      <_ContentIncludedByDefault Remove="wwwroot\categoryImages\film.jpg" />
+      <_ContentIncludedByDefault Remove="wwwroot\categoryImages\food.jpg" />
+      <_ContentIncludedByDefault Remove="wwwroot\categoryImages\music.jpg" />
+      <_ContentIncludedByDefault Remove="wwwroot\categoryImages\travel.jpg" />
+      <_ContentIncludedByDefault Remove="wwwroot\favicon.ico" />
+      <_ContentIncludedByDefault Remove="wwwroot\index.html" />
+      <_ContentIncludedByDefault Remove="wwwroot\logo.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\placeholder.png" />
+      <_ContentIncludedByDefault Remove="wwwroot\user.png" />
+    </ItemGroup>
+
 </Project>

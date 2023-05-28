@@ -1,6 +1,7 @@
-FROM mcr.microsoft.com/dotnet/sdk:6.0 as build
-ARG Configuration=Debug
+﻿FROM mcr.microsoft.com/dotnet/sdk:6.0 as build
+ARG Configuration=Release
 
+EXPOSE 8080
 WORKDIR /usr/shared/app
 
 #restoring dependencies
@@ -23,12 +24,7 @@ RUN --mount=type=cache,id=nuget-cache,target=/root/.nuget/packages \
 
 #building a runtime image
 FROM mcr.microsoft.com/dotnet/aspnet:6.0-alpine as publish
-
 WORKDIR /usr/shared/app
-EXPOSE 5000
-
-ENV ASPNETCORE_ENVIRONMENT=Development
-ENV ASPNETCORE_URLS=http://+:5000
 
 COPY --from=build /publish ./
 

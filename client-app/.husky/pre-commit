@@ -3,3 +3,26 @@
 
 npm run lint && npm run prettier
 echo "Style lint successful"
+
+lockfiles="yarn.lock package-lock.json npm-shrinkwrap.json"
+lockfile_name=""
+
+for lockfile in $lockfiles; do
+  if file_exists "$lockfile"; then
+    if [ -n "$lockfile_name" ]; then
+      lockfile_name=$lockfile
+    else
+      echo "Error: Found multiple lockfiles."
+      echo "Error: Both ${lockfile} and ${lockfile_name} exist. Remove one of them."
+      exit 1
+    fi
+  fi
+done
+
+file_exists() {
+  if [ -f "$1" ]; then
+    return 0
+  else
+    return 1
+  fi
+}
