@@ -44,7 +44,7 @@ jobs:
           ls -la
       - uses: actions/upload-artifact@v3
         with:
-          path: ${{ env.DIST_PATH }}
+          path: ${{ env.PROD_BUILD_FOLDER }}
           name: ${{ env.PROD_BUILD_ART }}
           if-no-files-found: error
   sca:
