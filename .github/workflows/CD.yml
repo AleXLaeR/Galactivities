@@ -1,4 +1,4 @@
-﻿name: Docker-based app CI / CD pipeline
+name: Docker-based app CI / CD pipeline
 on:
   push:
     branches: [master]
