@@ -1,5 +1,5 @@
 # flyctl launch added from .gitignore
-**\﻿*.swp
+**\*.swp
 **\*.*~
 **\project.lock.json
 **\.DS_Store
@@ -38,7 +38,7 @@
 **\.vs
 
 # flyctl launch added from .idea\.idea.Reactivities\.idea\.gitignore
-.idea\.idea.Reactivities\.idea\**\﻿# Default ignored files
+.idea\.idea.Reactivities\.idea\**\ # Default ignored files
 .idea\.idea.Reactivities\.idea\shelf
 .idea\.idea.Reactivities\.idea\workspace.xml
 # Rider ignored files
