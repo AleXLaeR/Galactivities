@@ -116,8 +116,8 @@ jobs:
           file: ${{ env.DOCKERFILE_PATH }}
           tags: ${{ steps.meta.outputs.tags }}
           platforms: 'linux/amd64,linux/arm64'
-          cache-from: type=gha
-          cache-to: type=gha,mode=max
+          # cache-from: type=gha
+          # cache-to: type=gha,mode=max
           push: ${{ github.event_name != 'pull_request' }}
   sca-trivy:
     name: Perform SCA container scan via Trivy
