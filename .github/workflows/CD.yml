@@ -13,7 +13,7 @@ env:
   PROD_BUILD_FOLDER: API/wwwroot
 
   SARIF_REPORT_NAME: results-report
-  IMAGE_NAME: ${{ secrets.DOCKERHUB_USERNAME }}/galactivities
+  IMAGE_NAME: ${{ secrets.DOCKERHUB_USERNAME }}/galactivities-app
 jobs:
   build-prod:
     # if: github.event.pull_request.merged == true && github.event.pull_request.base.ref == 'master'
