@@ -1,24 +1,15 @@
-# flyctl launch added from .gitignore
-**\*.swp
-**\*.*~
-**\project.lock.json
 **\.DS_Store
 **\*.pyc
 **\nupkg
 
-# Visual Studio Code
-**\.vscode
+.vscode/
+.idea/
 
-# Rider
-**\.idea
-
-# User-specific files
 **\*.suo
 **\*.user
 **\*.userosscache
 **\*.sln.docstates
 
-# Build results
 **\[Dd]ebug
 **\[Dd]ebugPublic
 **\[Rr]elease
@@ -36,19 +27,5 @@
 
 # Visual Studio 2015
 **\.vs
-
-# flyctl launch added from .idea\.idea.Reactivities\.idea\.gitignore
-.idea\.idea.Reactivities\.idea\**\ # Default ignored files
-.idea\.idea.Reactivities\.idea\shelf
-.idea\.idea.Reactivities\.idea\workspace.xml
-# Rider ignored files
-.idea\.idea.Reactivities\.idea\modules.xml
-.idea\.idea.Reactivities\.idea\contentModel.xml
-.idea\.idea.Reactivities\.idea\.idea.Reactivities.iml
-.idea\.idea.Reactivities\.idea\projectSettingsUpdater.xml
-# Editor-based HTTP Client requests
-.idea\.idea.Reactivities\.idea\httpRequests
-# Datasource local storage ignored files
-.idea\.idea.Reactivities\.idea\dataSources
-.idea\.idea.Reactivities\.idea\dataSources.local.xml
 fly.toml
+.gitignore
